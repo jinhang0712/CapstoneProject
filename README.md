@@ -7,4 +7,5 @@ This is an Online Restaurant Reservation System created which allows customers t
 The administrator as the option to view/edit orders and reservations, and also the ability to edit menu items as needed.
 
 Visit https://reservationforce.herokuapp.com/ to explore the website.
+
 To explore the page as admin, please email jin.h.choi01@gmail.com to get admin account information.
