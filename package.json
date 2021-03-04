@@ -1,0 +1,24 @@
+{
+  "name": "team-salesforce-capstone",
+  "version": "1.0.0",
+  "description": "This capstone project by team salesforce (Jin Hyeong Choi, jonathan Gonzalez, Mahmoud Aboutaleb, and Teerathpreet Sekhon) aims to create a flexible restraunt reservation website.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "js-cookie": "^2.2.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.11",
+    "nodemon": "^2.0.7"
+  }
+}

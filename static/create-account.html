@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dining Reservations</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous" />
+
+</head>
+
+<body>
+
+    <!--Start of Navbar section-->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <div href="/" id="navbar__logo"><i class="fas fa-stroopwafel"></i>Demo</div>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/public/index.html" class="navbar__links">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/items" class="navbar__links">Menu</a>
+                </li>
+                <li class="navbar__item">
+                    <!--  -->
+                    <div class="dropdown navbar__item">
+                        <button class="dropbtn navbar__links">Admin
+                          <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="/items/admin" class="navbar__links">Edit Menu</a>
+                            <a href="/reservations/view" class="navbar__links">Admin View</a>
+                        </div>
+                      </div>
+                    <!--  -->
+                <li class="navbar__btn">
+                    <a id='username' href="/public/login.html" class="button">LOGIN</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--End Navbar section-->
+
+    <!--Start of Main page section-->
+    <div class="container__ca">
+        <div class="ca__box">
+            <div class="res__logo-ca"><i class="fas fa-stroopwafel"></i>Restaurant Name</div>
+            <div class="new-cus__box">
+                <p class="new-cus__title">New Customer Registeration</p>
+                <span class="new-cus__text">Please fill out the information below
+                    to register as a new customer!</span>
+            </div>
+
+            <form action="/api/user/register" method="POST">
+                <div class="ca-line">
+                    <input type="text" id="full-name" name="firstname" placeholder="First name">
+                    <input type="text" id="full-name" name="lastname" placeholder="Last name">
+                </div>
+                <div class="ca-line">
+                    <input type="text" id="ca-info-box" name="email" placeholder="Email">
+                </div>
+                <div class="ca-line">
+                    <input type="password" id="ca-info-box" name="password" placeholder="Password">
+                </div>
+                <!-- <div class="ca-birthdate">
+                    <div class="top-Tab1">
+                        <ul>
+                            <li>Date:<input type="date" id="date"></li>
+                        </ul>
+                    </div>
+                </div> -->
+                <!-- <div class="ca-line2">
+                    <input type="text" id="ca-admin-box" name="lastname"
+                        placeholder="*If you are not registering as Admin, please ignore this box.">
+                </div> -->
+                <input href="http://localhost:3000/public/index.html" class="log__button" type="submit" value=Submit>
+                <!-- <a href="/" class="log__button">Submit</a> -->
+            </form>
+            <div><span id="error"><span></span></div>
+
+        </div>
+    </div>
+    <!--End of Main page section-->
+    <script src="/public/resNavbar.js"></script>
+</body>
+
+</html>
+
+
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+<script>
+    var error = "";
+    error = Cookies.get("Error");
+    if (error || error === "undefined") {
+        document.getElementById('error').innerHTML = error;
+    }
+</script>

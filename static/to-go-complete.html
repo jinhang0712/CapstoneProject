@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dining Reservations</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+    <script src="getUser.js"></script>
+    <script src="js/scripts.js"></script>
+</head>
+
+<body>
+
+    <!--Start of Navbar section-->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <div href="/" id="navbar__logo"><i class="fas fa-stroopwafel"></i>Demo</div>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/public/index.html" class="navbar__links">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/items" class="navbar__links">Menu</a>
+                </li>
+                <li class="navbar__item">
+                    <!--  -->
+                    <div class="dropdown navbar__item">
+                        <button class="dropbtn navbar__links">Admin
+                          <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="/items/admin" class="navbar__links">Edit Menu</a>
+                            <a href="/reservations/view" class="navbar__links">Admin View</a>
+                        </div>
+                      </div>
+                    <!--  -->
+                <li class="navbar__btn">
+                    <a id='username' href="/public/login.html" class="button">LOGIN</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--End Navbar section-->
+
+    <!--Start of Main page section-->
+    <div class="container__comp">
+
+        <p>Your Order is complete!<br><span>Your Order number is: <br> <a id='Ordernumber'> </a> </span> </p>
+    </div>
+    <!--End of Main page section-->
+    <script src="/public/resNavbar.js"></script>
+</body>
+
+</html>
+
+<script>
+    document.getElementById('Ordernumber').innerHTML = (Cookies.get("resNum"));
+</script>

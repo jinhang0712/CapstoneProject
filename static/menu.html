@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dining Reservations</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <script src="cart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+    <script src="getUser.js"></script>
+</head>
+
+<body>
+
+    <!--Start of Navbar section-->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo"><i class="fas fa-stroopwafel"></i>Restaurant Name</a>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/public/index.html" class="navbar__links">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/items" class="navbar__links">Menu</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links">About Us</a>
+                </li>
+                <li class="navbar__btn">
+                    <a id='username' href="/public/login.html" class="button">LOGIN</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--End Navbar section-->
+
+    <!--Start of Main page section-->
+    <div class="menu__container">
+
+        <!-- Tab links -->
+        <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'Burger')">Burger</button>
+            <button class="tablinks" onclick="openCity(event, 'Pasta')">Pasta</button>
+            <button class="tablinks" onclick="openCity(event, 'Pizza')">Pizza</button>
+            <button class="tablinks" onclick="openCity(event, 'Beverage')">Beverage</button>
+        </div>
+
+        <!-- Tab content -->
+        <div id="Burger" class="tabcontent">
+            <section class="container content-section">
+                <h2 class="section-header">Burger</h2>
+                <p class="section-description">
+                    Some description about burgers
+                </p>
+                <div class="shop-items">
+                    <div class="shop-item">
+                        <span class="shop-item-title">Southwest Burger</span>
+                        <img class="shop-item-image" src="images/burger1.jpg">
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">$12.99</span>
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        </div>
+                    </div>
+                    <div class="shop-item">
+                        <span class="shop-item-title">Rancho Burger</span>
+                        <img class="shop-item-image" src="images/burger2.jpg">
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">$13.99</span>
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        </div>
+                    </div>
+                    <div class="shop-item">
+                        <span class="shop-item-title">O-Burger</span>
+                        <img class="shop-item-image" src="images/burger3.jpg">
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">$9.99</span>
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        </div>
+                    </div>
+                    <div class="shop-item">
+                        <span class="shop-item-title">Bobo Burger</span>
+                        <img class="shop-item-image" src="images/burger4.jpg">
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">$15.99</span>
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="Pasta" class="tabcontent">
+            <section class="container content-section">
+                <h2 class="section-header">Pasta</h2>
+                <p class="section-description">
+                    Some description about pasta
+                </p>
+                <div class="shop-items">
+                    <div class="shop-item">
+                        <span class="shop-item-title">Combo A</span>
+                        <img class="shop-item-image" src="images/pasta1.jpg">
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">$12.99</span>
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        </div>
+                    </div>
+                    <div class="shop-item">
+                        <span class="shop-item-title">Sun-dried Tomasta</span>
+                        <img class="shop-item-image" src="images/pasta2.jpg">
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">$13.99</span>
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        </div>
+                    </div>
+                    <div class="shop-item">
+                        <span class="shop-item-title">Combo B</span>
+                        <img class="shop-item-image" src="images/pasta3.jpg">
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">$9.99</span>
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        </div>
+                    </div>
+                    <div class="shop-item">
+                        <span class="shop-item-title">Shrimp Pasta</span>
+                        <img class="shop-item-image" src="images/pasta4.jpg">
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">$15.99</span>
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="Pizza" class="tabcontent">
+            <section class="container content-section">
+                <h2 class="section-header">Pizza</h2>
+                <p class="section-description">
+                    Some description about pizzas
+                </p>
+                <div class="shop-items">
+                    <div class="shop-item">
+                        <span class="shop-item-title">Pepperoni Pizza</span>
+                        <img class="shop-item-image" src="images/pizza1.jpg">
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">$12.99</span>
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        </div>
+                    </div>
+                    <div class="shop-item">
+                        <span class="shop-item-title">Pie-zza</span>
+                        <img class="shop-item-image" src="images/pizza2.jpg">
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">$13.99</span>
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        </div>
+                    </div>
+                    <div class="shop-item">
+                        <span class="shop-item-title">Veganizza</span>
+                        <img class="shop-item-image" src="images/pizza3.jpg">
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">$9.99</span>
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        </div>
+                    </div>
+                    <div class="shop-item">
+                        <span class="shop-item-title">All-zza</span>
+                        <img class="shop-item-image" src="images/pizza4.jpg">
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">$15.99</span>
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="Beverage" class="tabcontent">
+            <h3 id="menu-tab">Tokyo</h3>
+            <p>Tokyo is the capital of Japan.</p>
+        </div>
+    </div>
+
+    <section class="cart__bottom">
+        <h2 class="section-header-cart"><i class="fas fa-shopping-cart"></i>Cart</h2>
+        <div class="cart-row">
+            <span class="cart-item cart-header cart-column">ITEM</span>
+            <span class="cart-price cart-header cart-column">PRICE</span>
+            <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+        </div>
+        <div class="cart-items">
+        </div>
+        <div class="cart-total">
+            <strong class="cart-total-title">Total</strong>
+            <span class="cart-total-price">$0</span>
+        </div>
+        <a href="/public/to-go-complete.html" class="to-go-cart-complete">
+            <button class="btn btn-primary btn-purchase" type="button"><i
+                    class="fas fa-money-bill-wave"></i>Purchase</button>
+        </a>
+    </section>
+    <!--End of Main page section-->
+
+</body>
+
+</html>

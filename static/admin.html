@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Dining Reservations</title>
+	<link rel="stylesheet" href="/public/css/style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+		integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous" />
+	<script src="js/scripts.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+		integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+		crossorigin="anonymous">
+		</script>
+</head>
+
+<body>
+
+	<!--Start of Navbar section-->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <div href="/" id="navbar__logo"><i class="fas fa-stroopwafel"></i>Demo</div>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/public/index.html" class="navbar__links">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/items" class="navbar__links">Menu</a>
+                </li>
+                <li class="navbar__item">
+                    <!--  -->
+                    <div class="dropdown navbar__item">
+                        <button class="dropbtn navbar__links">Admin
+                          <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="/items/admin" class="navbar__links">Edit Menu</a>
+                            <a href="/reservations/view" class="navbar__links">Admin View</a>
+                        </div>
+                      </div>
+                    <!--  -->
+                <li class="navbar__btn">
+                    <a id='username' href="/public/login.html" class="button">LOGIN</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+	<!--End Navbar section-->
+
+	<!-- Start of Product section-->
+	<div class="right-section1-admin">
+		<div class="subtitle-admin">To-Go Order List</div>
+		<table class = "admin-table-11">
+			<tr>
+				<th>Time</th>
+				<th>Name</th>
+				<th>Order</th>
+				<th>Taken</th>
+				<th>Cancel</th>
+			</tr>
+			<tr>
+				<td>10:30am</td>
+				<td>Griffin</td>
+				<td>(1) Burger</td>
+				<td>
+					<input type="checkbox" id="orderbox1">
+				</td>
+				<td>
+					<button class="cancel-admin">Cancel</button>
+				</td>
+			</tr>
+			<tr>
+				<td>10:45am</td>
+				<td>Taylor</td>
+				<td>(1) Pasta</td>
+				<td>
+					<input type="checkbox" id="orderbox1">
+				</td>
+				<td>
+					<button class="cancel-admin">Cancel</button>
+				</td>
+			</tr>
+			<tr>
+				<td>11:10am</td>
+				<td>Joy</td>
+				<td>(2) Large Fries</td>
+				<td>
+					<input type="checkbox" id="orderbox1">
+				</td>
+				<td>
+					<button class="cancel-admin">Cancel</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="Products_Section1">
+		<div class="left-section1">
+			<div class="top-Tab1">
+				<form method="POST" id="dateForm">
+					<ul>
+						<li>Date:<input type="date" name="date" id="date"></li>
+						<li>Time:<input type="time" name="time" id="time"></li>
+						<li><input type="submit" value="Check" id="submitBtn"></li>
+					</ul>
+				</form>
+			</div>
+			<div class="content_col3">
+				<div class="top-Tab3">
+					<ul>
+						<li>
+							<div class="reserv_circle">
+								<p style=" padding: 0px 0; text-align: center;">
+									<img src="images/swap/img_swap_off.png" alt="" />
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="reserv_circle">
+								<p style=" padding: 0px 0; text-align: center;">
+									<label>
+										<input type="radio" name="table_num" value="1">
+										<img src="images/img_swap_on.png" alt="" class="img-swap" id="table_no1" />
+									</label>
+								</p>
+							</div>
+						</li>
+
+						<li>
+							<div class="reserv_circle">
+								<p style=" padding: 0px 0; text-align: center;">
+									<label>
+										<input type="radio" name="table_num" value="2">
+										<img src="images/img_swap_on.png" alt="" class="img-swap" id="table_no2" />
+									</label>
+								</p>
+							</div>
+						</li>
+
+						<li>
+							<div class="reserv_circle">
+								<p style=" padding: 0px 0; text-align: center;">
+									<a href="/public/registration-complete.html"><img src="images/swap/img_swap_on.png"
+											alt="" class="img-swap" /></a>
+								</p>
+							</div>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<div class="reserv_circle">
+								<p style=" padding: 0px 0; text-align: center;">
+									<a href="/public/registration-complete.html"><img src="images/swap/img_swap_on.png"
+											alt="" class="img-swap" /></a>
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="reserv_circle">
+								<p style=" padding: 0px 0; text-align: center;">
+									<label>
+										<input type="radio" name="table_num" value="3">
+										<img src="images/img_swap_on.png" alt="" class="img-swap" id="table_no3" />
+									</label>
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="reserv_circle">
+								<p style=" padding: 0px 0; text-align: center;">
+									<label>
+										<input type="radio" name="table_num" value="4">
+										<img src="images/img_swap_on.png" alt="" class="img-swap" id="table_no4" />
+									</label>
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="reserv_circle">
+								<p style=" padding: 0px 0; text-align: center;">
+									<img src="images/swap/img_swap_on.png" alt="" />
+								</p>
+							</div>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<div class="reserv_circle">
+								<p style=" padding: 0px 0; text-align: center;">
+									<img src="images/enterance.png" alt="" />
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="reserv_circle">
+								<p style=" padding: 0px 0; text-align: center;">
+									<label>
+										<input type="radio" name="table_num" value="5">
+										<img src="images/img_swap_on.png" alt="" class="img-swap" id="table_no5" />
+									</label>
+								</p>
+							</div>
+						</li>
+
+						<li>
+							<div class="reserv_circle">
+								<p style=" padding: 0px 0; text-align: center;">
+									<label>
+										<input type="radio" name="table_num" value="6">
+										<img src="images/img_swap_on.png" alt="" class="img-swap" id="table_no6" />
+									</label>
+								</p>
+							</div>
+						</li>
+
+						<li>
+							<div class="reserv_circle">
+								<p style=" padding: 0px 0; text-align: center;">
+									<a href="/public/registration-complete.html"><img src="images/swap/img_swap_on.png"
+											alt="" class="img-swap" /></a>
+								</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- End of Product section-->
+</body>
+
+</html>
